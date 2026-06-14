@@ -1015,6 +1015,251 @@ ul { list-style: none; }
   color: #fff;
 }
 
+/* --- Page Hero (Products page) --- */
+.page-hero {
+  background: linear-gradient(135deg, #1A2B4A 0%, #2C4470 50%, #1A2B4A 100%);
+  color: #fff;
+  padding: 48px 0;
+  text-align: center;
+}
+
+.page-hero h1 {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.page-hero p {
+  color: rgba(255,255,255,0.7);
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+.page-hero-badges {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.page-hero-badges span {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent-green);
+}
+
+/* --- Filter Bar --- */
+.filter-bar {
+  background: var(--bg-white);
+  border-bottom: 1px solid var(--border-light);
+  padding: 16px 0;
+  position: sticky;
+  top: 76px;
+  z-index: 100;
+}
+
+.filter-bar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 8px 18px;
+  border: 1px solid var(--border-light);
+  background: var(--bg-white);
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition);
+  color: var(--text-medium);
+}
+
+.filter-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.filter-btn.active {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+
+.price-list-btn {
+  white-space: nowrap;
+  font-size: 14px;
+  padding: 10px 24px;
+}
+
+/* --- Product Catalog Grid --- */
+.products-grid-catalog {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.product-sku {
+  display: inline-block;
+  background: var(--bg-gray);
+  color: var(--text-medium);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 3px;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+.product-specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.product-specs span {
+  font-size: 11px;
+  color: var(--text-light);
+  background: var(--bg-light);
+  padding: 3px 8px;
+  border-radius: 3px;
+}
+
+.product-card-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-sm {
+  padding: 7px 14px;
+  font-size: 12px;
+  border-radius: 4px;
+}
+
+/* --- Price List Modal --- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  background: var(--bg-white);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  max-width: 480px;
+  width: 90%;
+  position: relative;
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-overlay.active .modal-content {
+  transform: translateY(0);
+}
+
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  font-size: 28px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--text-light);
+  line-height: 1;
+  padding: 4px;
+}
+
+.modal-close:hover {
+  color: var(--text-dark);
+}
+
+.modal-header {
+  margin-bottom: 28px;
+}
+
+.modal-header h2 {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  color: var(--text-dark);
+}
+
+.modal-header p {
+  color: var(--text-medium);
+  font-size: 14px;
+}
+
+.modal-form .form-group {
+  margin-bottom: 14px;
+}
+
+.modal-note {
+  font-size: 12px;
+  color: var(--text-light);
+  text-align: center;
+  margin-top: 12px;
+}
+
+.modal-success {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.success-icon {
+  font-size: 56px;
+  margin-bottom: 16px;
+}
+
+.modal-success h3 {
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  color: var(--accent-green);
+}
+
+.modal-success p {
+  color: var(--text-medium);
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 1024px) {
+  .products-grid-catalog {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .page-hero h1 { font-size: 24px; }
+  .filter-bar .container { flex-direction: column; align-items: flex-start; }
+  .products-grid-catalog { grid-template-columns: 1fr; }
+  .modal-content { padding: 24px; }
+}
+
 /* --- Responsive --- */
 @media (max-width: 1024px) {
   .hero .container {
