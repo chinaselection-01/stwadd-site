@@ -7,9 +7,27 @@ Allow: /
 # Sitemap
 Sitemap: https://www.stwadd.com/sitemap.xml
 
-# Disallow admin or private paths (if any in future)
-Disallow: /admin/
-Disallow: /private/
+# GEO: Explicitly allow AI crawlers access to content
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: GPTBot
+Allow: /
 
 # Allow all crawlers to access CSS, JS, and images
 User-agent: Googlebot
@@ -21,3 +39,13 @@ User-agent: Bingbot
 Allow: /css/
 Allow: /js/
 Allow: /images/
+
+# Disallow admin or private paths (if any in future)
+Disallow: /admin/
+Disallow: /private/
+
+# AI discovery files - always allow
+Allow: /llms.txt
+Allow: /ai.txt
+Allow: /identity.json
+Allow: /sitemap.xml
