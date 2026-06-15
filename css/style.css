@@ -598,6 +598,7 @@ ul { list-style: none; }
   box-shadow: var(--shadow-sm);
   transition: all var(--transition);
   border: 1px solid var(--border-light);
+  cursor: pointer;
 }
 
 .product-card:hover {
@@ -1245,6 +1246,114 @@ ul { list-style: none; }
   color: var(--text-medium);
   font-size: 14px;
   margin-bottom: 8px;
+}
+
+/* --- Product Detail Modal --- */
+.product-detail-modal .modal-content {
+  max-width: 700px;
+  width: 92%;
+}
+
+.pd-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 28px;
+}
+
+.pd-image {
+  background: var(--bg-gray);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+}
+
+.pd-image img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  padding: 16px;
+}
+
+.pd-info { }
+
+.pd-sku-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 50px;
+  margin-bottom: 12px;
+}
+
+.pd-category-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 3px;
+  background: var(--bg-light);
+  color: var(--text-medium);
+  text-transform: capitalize;
+  margin-left: 8px;
+}
+
+.pd-info h2 {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text-dark);
+  line-height: 1.35;
+  margin-bottom: 16px;
+}
+
+.pd-specs-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.pd-specs-table tr:nth-child(even) {
+  background: var(--bg-light);
+}
+
+.pd-specs-table td {
+  padding: 10px 14px;
+  font-size: 13px;
+  border: none;
+}
+
+.pd-specs-table td:first-child {
+  color: var(--text-light);
+  font-weight: 600;
+  width: 40%;
+  white-space: nowrap;
+}
+
+.pd-specs-table td:last-child {
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+.pd-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-light);
+}
+
+.pd-actions .btn { flex: 1; min-width: 140px; }
+
+@media (max-width: 768px) {
+  .pd-layout { grid-template-columns: 1fr; }
+  .pd-image { min-height: 220px; }
 }
 
 @media (max-width: 1024px) {
